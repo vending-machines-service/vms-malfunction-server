@@ -1,12 +1,11 @@
 package vms.malfunction.repo;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Repository;
 
-import vms.malfunction.dto.SensorMongoDB;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 
-@Repository
-public interface SensorMalFunctionRepository extends MongoRepository<SensorMongoDB, String>{
+import vms.malfunction.jpa.MFRecordCurrentJPA;
+
+public interface SensorMalFunctionRepository extends JpaRepository<MFRecordCurrentJPA, String>{
 
 }

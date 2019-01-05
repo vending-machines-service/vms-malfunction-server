@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import vms.malfunction.dto.SensorData;
-import vms.malfunction.dto.SensorMongoDB;
+import vms.malfunction.jpa.MFRecordCurrentJPA;
 import vms.malfunction.repo.SensorMalFunctionRepository;
 
 
@@ -41,15 +41,11 @@ public class MalFunctionService {
 	
 
 	private void saveInDataBase(SensorData sensor) {
-		SensorMongoDB sensorDB = new SensorMongoDB(LocalDate.now(), sensor.machineId, 
-				sensor.sensorId, sensor.value);
+		MFRecordCurrentJPA sensorDB = new MFRecordCurrentJPA(sensor.machineId, 
+				sensor.sensorId);
 		malFunctionRepo.save(sensorDB);
 		
 	}
-//	
-//	public List<SensorMongoDB> getAllRecords(){
-//		return malFunctionRepo.findAll();
-//	}
-//			
+		
 
 }
