@@ -20,7 +20,7 @@ import vms.malfunction.repo.SensorMalFunctionRepository;
 
 
 @Service
-@EnableBinding(Sink.class)
+//@EnableBinding(Sink.class)
 public class MalFunctionService {
 	
 	@Autowired
@@ -28,7 +28,7 @@ public class MalFunctionService {
 	
 	ObjectMapper mapper = new ObjectMapper();
 	
-	@StreamListener(Sink.INPUT)
+//	@StreamListener(Sink.INPUT)
 	public void getSensorData(String json) throws JsonParseException, JsonMappingException, IOException {
 			SensorData sensor = mapper.readValue(json, SensorData.class);
 			String id = String.format("%d-%d", sensor.machineId, sensor.sensorId);
@@ -45,6 +45,10 @@ public class MalFunctionService {
 				sensor.sensorId);
 		malFunctionRepo.save(sensorDB);
 		
+	}
+	
+	public void saveJpa(MFRecordCurrentJPA jpa) {
+		malFunctionRepo.save(jpa);
 	}
 		
 
