@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "vms-malfunction",
+                "projectName": "vms-malfunction",
+                "workingDirectory": "/Users/viktordoroshenko/git/projects/vending-machine-service/vms-malfunction",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "vms-malfunction",
+                "projectName": "vms-malfunction",
+                "workingDirectory": "/Users/viktordoroshenko/git/projects/vending-machine-service/vms-malfunction",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

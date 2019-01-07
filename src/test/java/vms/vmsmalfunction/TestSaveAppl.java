@@ -1,6 +1,4 @@
-package vms.malfunction;
-
-import static org.junit.Assert.*;
+package vms.vmsmalfunction;
 
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,21 +6,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import vms.malfunction.jpa.MFRecordCurrentJPA;
-import vms.malfunction.service.MalFunctionService;
+import vms.vmsmalfunction.jpa.MFRecordCurrentJPA;
+import vms.vmsmalfunction.service.MalFunctionService;
 
 @SpringBootApplication
-public class MalfunctionServiceApplTest {
-	
+class TestSaveAppl {
 	MalFunctionService service;
 	ConfigurableApplicationContext ctx;
-	
+
 	MFRecordCurrentJPA rec = new MFRecordCurrentJPA(1, 1);
-	
-	
+
 	@BeforeEach
 	public void setUp() {
-		ctx = SpringApplication.run(MalfunctionServiceApplTest.class);
+		ctx = SpringApplication.run(TestSaveAppl.class);
 		service = ctx.getBean(MalFunctionService.class);
 	}
 
@@ -30,5 +26,4 @@ public class MalfunctionServiceApplTest {
 	public void test() {
 		service.saveJpa(rec);
 	}
-
 }

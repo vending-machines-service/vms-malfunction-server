@@ -1,4 +1,4 @@
-package vms.malfunction.jpa;
+package vms.vmsmalfunction.jpa;
 
 import java.time.LocalDate;
 
@@ -7,34 +7,31 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
-
-
-@Getter @Setter @NoArgsConstructor @ToString @EqualsAndHashCode
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Entity
-@Table(name = "current_mulfunction")
+@Table(name = "current_malfunction")
 public class MFRecordCurrentJPA {
-	
+
 	@Id
 	String id;
-	@Column(name="date_open")
+	@Column(name = "date_open")
 	LocalDate currentDate;
-	@Column(name="machine_id")
+	@Column(name = "machine_id")
 	int machineId;
-	@Column(name="sensor_id")
+	@Column(name = "sensor_id")
 	int sensorId;
-	@Column(name="user_id")
+	@Column(name = "user_id")
 	int userId;
-	
-
 
 	public MFRecordCurrentJPA(int machineId, int sensorId) {
 		super();
@@ -44,7 +41,5 @@ public class MFRecordCurrentJPA {
 		this.sensorId = sensorId;
 		this.userId = 0;
 	}
-
-	
 
 }

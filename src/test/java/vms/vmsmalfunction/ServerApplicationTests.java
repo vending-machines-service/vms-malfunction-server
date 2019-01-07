@@ -1,4 +1,4 @@
-package vms.malfunction;
+package vms.vmsmalfunction;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,4 +14,3 @@ public class ServerApplicationTests {
 	}
 
 }
-
